@@ -1,0 +1,12 @@
+.d-flex{
+    height: 60px;
+    border-bottom: none;
+}
+
+table {
+    width: 100%;
+    margin-top: 2rem;
+  }
+  table .btn{
+    margin: 6px;
+  }

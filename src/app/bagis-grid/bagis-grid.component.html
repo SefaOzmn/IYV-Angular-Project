@@ -1,0 +1,68 @@
+
+  <table class="table" >
+    <thead class="table-dark">
+      <tr class="border border-dark p-2 mb-2">
+        <th>Bağış ID</th>
+        <th>Bağışçı ID</th>
+        <th>Bağış Miktarı</th>
+        <th>Bağış Tarihi</th>
+        <th>Bağış Tipi</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of bagisArray " class="border border-dark p-2 mb-2">
+        <td>{{item.bagis_id}}</td>
+        <td>{{item.bagisci_id}}</td>
+        <td>{{item.miktar}}</td>
+        <td>{{item.bagis_tarih}}</td>
+        <td>{{item.bagis_tipi}}</td>
+        <td>
+          <button class="btn btn-sm btn-danger" (click)="deleteBagis(item.bagis_id)" >
+            <i class="fa fa-remove"></i>Delete</button>
+        </td>
+        <td class="d-flex">
+          <button class="btn btn-sm btn-success" (click)="openDialog(data)" >
+            <i class="fa fa-remove"></i>Update</button>
+            </td>
+      </tr>
+    </tbody>
+  </table> 
+  <button class="btn btn-sm btn-success" [routerLink]="['/bagis']" >
+    <i class="fa fa-remove"></i>Add</button>
+
+
+  <!-- <table class="table">
+    <thead>
+      <tr class="border border-dark">
+        <th scope="col">Bağışçı ID</th>
+        <th scope="col">Bağış Miktarı</th>
+        <th scope="col">Bağış Tarihi</th>
+        <th scope="col">Bağaış Tipi</th>
+      </tr>
+    </thead>
+    <tbody class="border border-dark">
+      <tr *ngFor="let item of bagisArray" class="border border-dark">
+        <td>{{item.bagisci_id}}</td>
+        <td>{{item.miktar}}</td>
+        <td>{{item.bagis_tarih}}</td>
+        <td>{{item.bagis_tipi}}</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr>
+    </tbody>
+  </table>  -->
+
+
+  

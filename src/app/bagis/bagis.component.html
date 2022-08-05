@@ -1,0 +1,112 @@
+ <!-- <form class="row" [formGroup]="formGrup">
+  <br />
+
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label">Bağışçı ID</label>
+    <input type="text" class="form-control" formControlName="bagisci_id" />
+  </div>
+  <div class="col-md-5">
+    <label for="exampleFormControlTextarea1" class="form-label"
+      >Bağış Miktarı</label
+    >
+    <input type="text" class="form-control" formControlName="miktar" />
+  </div>
+  <br />
+  <br />
+  <br />
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Bağış Tarihi</label
+    >
+    <input type="date" class="form-control" formControlName="bagis_tarihi" />
+  </div>
+  <div class="col-md-5">
+    Bağış Tipi
+    <select
+      formControlName="bagis_tipi"
+      class="form-select"
+      aria-label="Default select example"
+    >
+      <option value="kurucu">Zekat</option>
+      <option value="mezun">Sadaka</option>
+      <option value="bagisci">Normal</option>
+      <option value="personel">Fitre</option>
+    </select>
+  </div>
+  <br />
+  <br />
+  <div class="col-md-7" style="flex-wrap: wrap">
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="saveBagis()"
+      style="margin-right: 20px; width: 205px; margin-bottom: 10%"
+    >
+      Kaydet
+    </button>
+    <button
+      type="button"
+      [routerLink]="['/']"
+      class="btn btn-outline-dark"
+      (click)="readBagis()"
+      style="width: 205px; margin-right: 20px"
+    >
+      Oku
+    </button>
+    <button
+      type="button"
+      class="btn btn-outline-dark"
+      (click)="deleteBagis()"
+      style="width: 205px"
+    >
+      Sil
+    </button>
+  </div>
+</form> -->
+<!-- ------------------------------------------ -->
+<form class="example-form" [formGroup]="formGrup">
+  <table>
+
+  <mat-form-field appearance="fill">
+  <mat-label>Bağışçı</mat-label>
+  <mat-select formControlName = "bagisci_id" >
+    <mat-option *ngFor="let item of options" [value]=" item.id ">{{item.ad + " " +item.soyad}}</mat-option>    
+  </mat-select>
+</mat-form-field>
+  <td>
+    <mat-form-field style = "margin-left: 1rem;" class="example-full-width" appearance="fill">
+    <mat-label>Bağış Miktarı</mat-label>
+    <input formControlName="miktar" matInput>
+  </mat-form-field></td>
+</table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Bağış Tarihi</mat-label>
+      <input type="date" formControlName="bagis_tarih" matInput>
+    </mat-form-field>
+  </td>
+  <mat-form-field appearance="fill">
+    <mat-label>Bağış Tipi</mat-label>
+    <mat-select formControlName="bagis_tipi">
+      <mat-option value="Zekat">Zekat</mat-option>
+      <mat-option value="Sadaka">Sadaka</mat-option>
+      <mat-option value="Normal">Normal </mat-option>
+      <mat-option value="Fitre">Fitre</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  </tr>
+</table>
+
+  
+<div class="button">
+  
+  <button style="margin-left: 8rem; width:200px" mat-raised-button color="warn" (click)="saveBagis()">Kaydet</button>
+  <!-- <button style="margin-left:2rem" mat-raised-button color="warn"(click)="readBagis()" >Oku</button>  
+  <button style="margin-left: 2rem" mat-raised-button color="warn" (click)="deleteBagis()" >Sil</button> -->
+  </div>
+</form>
+
