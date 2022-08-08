@@ -29,7 +29,7 @@ export class AuthService {
   }
 
   getToken() { // ************
-    return "57487654872244417543"
+    return "31422627257427367881"
     //return localStorage.getItem('token')
   }
   getCurrentUserId() {

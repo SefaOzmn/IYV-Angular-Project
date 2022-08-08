@@ -1,7 +1,5 @@
 <form class="example-form" [formGroup]="formGrup">
-    <table *ngFor="let item of options">
-
-
+    <table>
       <td>
         <mat-form-field style = "margin-left: 1rem;" class="example-full-width" appearance="fill">
         <mat-label>Bağış ID</mat-label>
@@ -10,10 +8,12 @@
     <td>
       <!-- *ngFor="let item of options" -->
       <td   >
-        <mat-form-field style = "margin-left: 1rem;" class="example-full-width" appearance="fill">
-        <mat-label>Bağışçı</mat-label>
-        <input formControlName="bagisci_id" matInput>
-      </mat-form-field></td>
+        <mat-form-field style="margin-left:1rem" appearance="fill">
+          <mat-label>Bağışçı</mat-label>
+          <mat-select formControlName = "bagisci_id" >
+            <mat-option *ngFor="let item of options" [value]=" item.id">{{item.ad + " " +item.soyad}}</mat-option>    
+          </mat-select>
+        </mat-form-field>
       <!-- *ngFor="let item of options"  -->
     <td>
       <mat-form-field style = "margin-left: 1rem;" class="example-full-width" appearance="fill">
@@ -25,14 +25,14 @@
     <table class="example-full-width" cellspacing="0">
       <tr>
       <td>
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field style="margin-left: 1rem;" class="example-full-width" appearance="fill">
         <mat-label>Bağış Tarihi</mat-label>
         <input type="date" formControlName="bagis_tarih" matInput>
       </mat-form-field>
     </td>
-    <mat-form-field appearance="fill">
+    <mat-form-field style="margin-left:1rem" appearance="fill">
       <mat-label>Bağış Tipi</mat-label>
-      <mat-select style="margin-left:1rem" formControlName="bagis_tipi">
+      <mat-select  formControlName="bagis_tipi">
         <mat-option value="Zekat">Zekat</mat-option>
         <mat-option value="Sadaka">Sadaka</mat-option>
         <mat-option value="Normal">Normal </mat-option>

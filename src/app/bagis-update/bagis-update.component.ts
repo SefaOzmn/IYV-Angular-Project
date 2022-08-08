@@ -19,10 +19,8 @@ export class BagisUpdateComponent implements OnInit {
   userId:any
   
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: {bagis: Bagis},private fb:FormBuilder,private auth:AuthService,private task:TaskService,
-    private route: ActivatedRoute,
-    private router:Router,
-    private taskService: TaskService
+  constructor(@Inject(MAT_DIALOG_DATA) public data: {bagis: Bagis},private fb:FormBuilder,private auth:AuthService,private task:TaskService,private router:Router,
+    
   ) {}
 
   Bagiscilar:Bagis[]=[]
@@ -38,7 +36,7 @@ export class BagisUpdateComponent implements OnInit {
       bagis_tipi:[this.data.bagis.bagis_tipi, Validators.required]
     })
     console.log(this.formGrup.value.id)
-    this.getJoin()
+    this.getComboBox()
   }
   get f() { 
     return this.formGrup.controls; 
