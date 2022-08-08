@@ -1,0 +1,257 @@
+  <!---[formGroup]="formGrup"
+  <br>
+  
+  <div class="col-md-4">
+      <label for="exampleFormControlInput1" class="form-label">ID</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName = "id"
+      
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="exampleFormControlTextarea1" class="form-label">T.C</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName = "tc"
+    />
+  </div> <br> 
+  <br>
+  <br>
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label">Ad</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName = "ad"
+    />
+  </div>
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label">Soyad</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName = "soyad"
+    />
+  </div>
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label">Cep Telefonu</label>
+    <input
+      type="text"
+      class="form-control"
+        formControlName = "cep_tel"
+      placeholder="(XXX) XXX XXXX"
+    />
+  </div>
+  <div class="col-md-5">
+    <label for="exampleFormControlInput1" class="form-label">Telefon</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName = "tel"
+      placeholder="(XXX) XXX XXXX"
+    />
+  </div>
+  <div class="col-md-8">
+    <label for="exampleFormControlInput1" class="form-label">Adres</label>
+    <textarea class="form-control" rows="3" formControlName="adres">
+
+    </textarea>
+  <br>
+  </div>
+  <br>
+  <div class="col-sm-5">GK Üye mi?
+    <select  formControlName = "gk_uye" class="form-select" aria-label="Default select example" >
+        <option value="1">Evet</option>
+        <option value="0">Hayır</option>
+      </select>
+    </div>
+    <br>
+    <br>
+    <div class="col-sm-5"> MT Güncel Mi?
+      <select formControlName = "mt_guncel" class="form-select" aria-label="Default select example" >
+        <option value="1">Evet</option>
+        <option value="0">Hayır</option>
+      </select>
+    </div>
+    <br>
+  <br>
+    <div class="col-sm-5">Durum
+      <select formControlName = "durum" class="form-select" aria-label="Default select example" >
+        <option value="1">Sağ</option>
+        <option value="0">Vefat</option>
+      </select>
+    </div>
+  <br>
+  <br/>
+  <div class="col-md-5">Kategori
+    <select formControlName = "kategori" class="form-select" aria-label="Default select example" >
+      <option value="kurucu">Kurucu</option>
+      <option value="mezun">Mezun</option>
+      <option value="bagisci">Bağışçı</option>
+      <option value="personel">Personel</option>
+    </select>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="col-md-7" style="flex-wrap: wrap;">
+    <button type="button" class="btn btn-outline-dark" (click)="saveTable()" style="margin-right: 20px; width:205px ;">Kaydet</button>
+    <button type="button" [routerLink]="['/']" class="btn btn-outline-dark"  (click)="readTable()" style="width:205px; margin-right: 20px ;">Oku</button>
+  <button type="button" class="btn btn-outline-dark" (click)="deleteTable()"  style="width:205px ;">Sil</button>
+</div>
+  </form> -->
+
+ <!-- <mat-form-field appearance="fill">
+  <mat-label>a</mat-label>
+  <input matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>b</mat-label>
+  <input matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>c</mat-label>
+  <input matInput>
+</mat-form-field>
+<mat-form-field appearance="fill">
+  <mat-label>d</mat-label>
+  <input matInput>
+</mat-form-field>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Textarea</mat-label>
+  <textarea matInput></textarea>
+
+
+<mat-form-field appearance="fill">
+  <mat-label>Select</mat-label>
+  <mat-select>
+    <mat-option value="one">First option</mat-option>
+    <mat-option value="two">Second option</mat-option>
+  </mat-select>
+</mat-form-field>
+
+ -->
+
+ 
+ <!-- KONTAK INPUT  -->
+
+ <form class="example-form" [formGroup]="formGrup">
+  <table>
+  <td>
+    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>TC</mat-label>
+    <input  minlength="11" maxlength="11" formControlName="tc" matInput>
+  </mat-form-field></td>
+
+  <td>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>E-mail</mat-label>
+      <input  type="email" formControlName="email" matInput>
+    </mat-form-field>
+  </td>
+
+</table>
+
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Ad</mat-label>
+      <input formControlName="ad" matInput>
+    </mat-form-field>
+  </td>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Soyad</mat-label>
+      <input formControlName="soyad" matInput>
+    </mat-form-field>
+  </td>
+  </tr>
+</table>
+
+  <p>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Adres</mat-label>
+      <textarea formControlName="adres" matInput placeholder="Ex. 100 Main St"></textarea>
+    </mat-form-field>
+
+  </p>
+  <table class="example-full-width" cellspacing="0"><tr>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Cep Telefonu</mat-label>
+      <input maxlength="11" minlength="11" formControlName="cep_tel" matInput>
+    </mat-form-field>
+  </td>
+    <td><mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Telefon No</mat-label>
+      <input maxlength="11" minlength="11"  formControlName = "tel_no" matInput>
+    </mat-form-field></td>
+  </tr></table>
+
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>GK Üye Mi?</mat-label>
+          <mat-select formControlName="gk_uye" >
+            <mat-option value="1">Evet</mat-option>
+            <mat-option value="0">Hayır</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>MT Güncel Mi?</mat-label>
+          <mat-select formControlName="mt_guncel">
+            <mat-option value="1"> Evet</mat-option>
+            <mat-option value="0"> Hayır</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+    </tr>
+
+  </table>
+  <table class="example-full-width" cellspacing="0">
+    <tr>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Durum</mat-label>
+          <mat-select formControlName="durum">
+            <mat-option value="1">Sağ</mat-option>
+            <mat-option value="0">Ölü</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+      <td>
+        <mat-form-field appearance="fill">
+          <mat-label>Kategori</mat-label>
+          <mat-select formControlName="kategori">
+            <mat-option value="kurucu">Kurucu</mat-option>
+            <mat-option value="mezun">Mezun</mat-option>
+            <mat-option value="bagisci">Bağış</mat-option>
+            <mat-option value="personel">Personel</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </td>
+    </tr>
+  </table>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Referans</mat-label>
+      <textarea formControlName="referans" matInput></textarea>
+    </mat-form-field>
+
+<div class="button">
+  <button style="margin-left: 8rem; width:200px" mat-raised-button color="primary" (click)="saveTable()">Kaydet</button>
+  <!-- <button style="margin-left:2rem" mat-raised-button color="primary" [routerLink]="['/about']" >Oku</button>   -->
+  
+  </div>
+</form>
+

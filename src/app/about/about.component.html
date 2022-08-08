@@ -1,0 +1,156 @@
+ <!-- KONTAK TABLO  -->
+
+
+<table class="table">
+  <thead class="table-dark">
+    <tr class="border border-dark p-2 mb-2">
+      <th scope="col">ID</th>
+      <th scope="col">T.C</th>
+      <th scope="col">Ad</th>
+      <th scope="col">Soyad</th>
+      <th scope="col">Cep_Telefonu</th>
+      <th scope="col">Tel_Numarası</th>
+      <th scope="col">Adres</th>
+      <th scope="col">E-mail</th>
+      <th scope="col">GK_Üye</th>
+      <th scope="col">MT_Güncel</th>
+      <th scope="col">Durum</th>
+      <th scope="col">Kategori</th>
+      <th scope="col">Referans</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of kontakArray" class="border border-dark p-2 mb-2">
+      <td>{{item.id}}</td>
+      <td>{{ item.tc }}</td>
+      <td>{{ item.ad }}</td>
+      <td>{{ item.soyad }}</td>
+      <td>{{ item.cep_tel }}</td>
+      <td>{{ item.tel_no }}</td>
+      <td>{{ item.adres }}</td>
+      <td>{{ item.email }}</td>
+      <td *ngIf="item.gk_uye">Evet</td>
+      <td *ngIf="!item.gk_uye">Hayır</td>
+      <td *ngIf="item.mt_guncel">Evet</td>
+      <td *ngIf="!item.mt_guncel">Hayır</td>
+      <td *ngIf="item.durum">Evet</td>
+      <td *ngIf="!item.durum">Hayır</td>
+      <td>{{ item.kategori }}</td>
+      <td>{{ item.referans }}</td>
+      <td>
+        <button class="btn btn-sm btn-danger" (click)="deleteTable(item.id)" [routerLink]="['/about']">
+          <i class="fa fa-remove"></i>Delete</button>
+      </td>
+      <td class="d-flex">
+        <button class="btn btn-sm btn-success" (click)="openDialog2(item)"  >
+          <i class="fa fa-remove" ></i>Update</button>
+        <!-- <span (click)="routeContact()" style="cursor: pointer" class="m-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-plus-square"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+        </span> -->
+        
+      </td>
+    </tr>
+    </tbody>
+</table>
+<button class="btn btn-sm btn-success" [routerLink]="['/home']" >
+  <i class="fa fa-remove" ></i>Add</button>
+
+<!-- KONTAKT TABLE
+
+<input
+  type="text"
+  class="form-control"
+  id="filterText"
+  placeholder="arama ifadesi giriniz"
+/>
+<br />
+<table class="table" class="table">
+  <thead class="table-dark">
+    <tr class="border border-dark p-2 mb-2">
+      <th>ID</th>
+      <th scope="col">T.C</th>
+      <th scope="col">Ad</th>
+      <th scope="col">Soyad</th>
+      <th scope="col">Cep_Telefonu</th>
+      <th scope="col">Tel_Numarası</th>
+      <th scope="col">Adres</th>
+      <th scope="col">GK_Üye</th>
+      <th scope="col">MT_Güncel</th>
+      <th scope="col">Durum</th>
+      <th scope="col">Kategori</th>
+      <th scope="col">Referans</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of kontakArray" class="border border-dark p-2 mb-2">
+      <td>{{item.id}}</td>
+      <td>{{item.tc}}</td>
+      <td>{{item.ad}}</td>
+      <td>{{item.soyad}}</td>
+      <td>{{item.cep_tel}}</td>
+      <td>{{item.tel}}</td>
+      <td>{{item.adres}}</td>
+      <td>{{item.gk_uye}}</td>
+      <td>{{item.mt_guncel}}</td>
+      <td>{{item.durum}}</td>
+      <td>{{item.kategori}}</td>
+      <td></td>
+        <span (click)="routeContact()" style="cursor: pointer" class="m-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-plus-square"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"
+            />
+            <path
+              d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
+            />
+          </svg>
+        </span>
+        <span class="m-auto">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-trash"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"
+            />
+            <path
+              fill-rule="evenodd"
+              d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"
+            />
+          </svg>
+        </span>
+
+    </tr>
+   
+  </tbody>
+</table> -->
+
+<!-- KONTAKT TABLE -->

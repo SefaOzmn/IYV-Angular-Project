@@ -1,0 +1,35 @@
+<!-- <ul class="list-group">
+    <li [routerLink]="['/homeTable']"  class="list-group-item active" aria-current="true">HOME COMPONENT GRID</li>
+    <li [routerLink]="['/about']" class="list-group-item">FORM GROUP</li>
+    <li [routerLink]="['/bagis']" class="list-group-item">A third item</li>
+    <li class="list-group-item">A fourth item</li>
+    <li class="list-group-item">And a fifth one</li>
+  </ul>
+   -->
+
+    <!-- <div class="row">
+    <div class="col-12">
+      <div class="list-group" id="list-tab" role="tablist">
+        <a class="list-group-item list-group-item-action" id="list-home-list" data-bs-toggle="list" [routerLink]="['/homeTable']" role="tab" aria-controls="list-home">kontak input</a>
+        <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" [routerLink]="['/about']" role="tab" aria-controls="list-profile">Kontak Grid</a>
+        <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" [routerLink]="['/bagis']" role="tab" aria-controls="list-messages">bagis input</a>
+        <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" [routerLink]="['/bagis-grid']" role="tab" aria-controls="list-settings">bagis grid</a>
+      </div>
+    </div>
+  </div> 
+  -->
+
+  <mat-nav-list>  
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" [routerLink]="['/home']">
+      <mat-icon>person_add</mat-icon> BAĞIŞCI EKLE 
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" [routerLink]="['/about']">
+      <mat-icon>personel</mat-icon> BAĞIŞÇILAR
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard"[routerLink]="['/bagis']" >
+      <mat-icon>input</mat-icon> BAĞIŞ EKLE
+    </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard" [routerLink]="['/bagis-grid']">
+      <mat-icon>dashboard</mat-icon> BAĞIŞLAR
+    </a>
+  </mat-nav-list>
