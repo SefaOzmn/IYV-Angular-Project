@@ -1,0 +1,110 @@
+<form class="example-form" [formGroup]="formGrup">
+    <table>
+    <td>
+      <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>TC</mat-label>
+      <input maxlength="11" minlength="11" formControlName="tc" matInput>
+    </mat-form-field></td>
+  </table>
+  
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Ad</mat-label>
+        <input formControlName="ad" matInput>
+      </mat-form-field>
+    </td>
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Soyad</mat-label>
+        <input formControlName="soyad" matInput>
+      </mat-form-field>
+    </td>
+    </tr>
+  </table>
+  
+    <p>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Adres</mat-label>
+        <textarea formControlName="adres" matInput placeholder="Ex. 100 Main St"></textarea>
+      </mat-form-field>
+
+      <td>
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>E-mail</mat-label>
+          <input  type="email" formControlName="email" matInput>
+        </mat-form-field>
+      </td>
+  
+    </p>
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Cep Telefonu</mat-label>
+        <input maxlength="11" minlength="11" formControlName="cep_tel" matInput>
+      </mat-form-field></td>
+
+      <td><mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Telefon No</mat-label>
+        <input maxlength="11" minlength="11" formControlName = "tel_no" matInput>
+      </mat-form-field></td>
+    </tr></table>
+  
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>GK Üye Mi?</mat-label>
+            <mat-select formControlName="gk_uye" >
+              <mat-option value="1">Evet</mat-option>
+              <mat-option value="0">Hayır</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>MT Güncel Mi?</mat-label>
+            <mat-select formControlName="mt_guncel">
+              <mat-option value="1"> Evet</mat-option>
+              <mat-option value="0"> Hayır</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </td>
+      </tr>
+  
+    </table>
+    <table class="example-full-width" cellspacing="0">
+      <tr>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Durum</mat-label>
+            <mat-select formControlName="durum">
+              <mat-option value="1">Sağ</mat-option>
+              <mat-option value="0">Ölü</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </td>
+        <td>
+          <mat-form-field appearance="fill">
+            <mat-label>Kategori</mat-label>
+            <mat-select formControlName="kategori">
+              <mat-option value="kurucu">Kurucu</mat-option>
+              <mat-option value="mezun">Mezun</mat-option>
+              <mat-option value="bagisci">Bağış</mat-option>
+              <mat-option value="personel">Personel</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </td>
+      </tr>
+    </table>
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Referans</mat-label>
+        <textarea formControlName="referans" matInput></textarea>
+      </mat-form-field>
+  
+  <div class="button">
+    <button mat-raised-button color="primary" (click)="updateTable()" (click)="refresh()">Güncelleme</button>    
+    </div>
+  </form>
+  
+  
